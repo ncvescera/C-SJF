@@ -23,6 +23,9 @@ float sjf(){
     printf("Inserisci il numero dei processi: ");
     scanf("%d",&nProcessi);
     
+    if(nProcessi <= 0)
+        return -2;
+    
     nProcessi -= 1; //ci serve una posizione in meno dato che il primo valore che verrà inserito deve essere sempre sommato e non ordinato.
     
     processi = ((int*)malloc(nProcessi*(sizeof(int))));
@@ -31,9 +34,15 @@ float sjf(){
     scanf("%d",&first);
     totale += first;
     
+    if(first <= 0)
+        return -3;
+    
     for(i=0;i<nProcessi;i++){
         printf("Inserisci il tempo di esecuzione: ");
         scanf("%d",&processi[i]);
+        
+        if(processi[i] <= 0)
+            return -3;
     }
     
     ordinaDati(processi,nProcessi);
