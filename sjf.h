@@ -49,8 +49,8 @@ float sjf(){
     
     for(i=0;i<nProcessi-1;i++){ //l'ultima posizione del vettore non ci serve perchè l'algoritmo è così
         totale += processi[i];
-	totale /= nProcessi;
+	
     }
-    
+    totale /= nProcessi+1;
     return totale;
 }
